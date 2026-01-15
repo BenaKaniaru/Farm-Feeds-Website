@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Products() {
-  const imageUrl = "/images/farm feeds ariel.webp";
+  const imageUrl = "/images/feeds.jfif";
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
