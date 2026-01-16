@@ -75,17 +75,17 @@ export default function Contact() {
   return (
     <div>
       <section className="relative h-screen w-full overflow-hidden">
-        <div
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            loaded ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            backgroundImage: `url('${imageUrl}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src={imageUrl}
+            alt="Farm background"
+            className={`w-full h-full object-cover transition-all duration-[1500ms] ease-out
+      ${loaded ? "opacity-100" : "opacity-0"}
+      scale-[1.05] sm:scale-[1.1] md:scale-[1.15] lg:scale-[1.2] xl:scale-[1.25]
+    `}
+          />
+        </div>
+
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-8 text-white gap-8">
           <h1 className="text-4xl md:text-6xl font-black">Get In Touch</h1>
@@ -172,7 +172,9 @@ export default function Contact() {
             <label className="text-sm font-medium text-gray-700">
               Full Name *
             </label>
-            <span className="italic text-sm text-red-500 px-2">{errors.name}</span>
+            <span className="italic text-sm text-red-500 px-2">
+              {errors.name}
+            </span>
             <div className="flex items-center border rounded-lg px-3 py-2 mt-3">
               <User size={18} className="text-green-600 mr-2" />
               <input
@@ -189,7 +191,9 @@ export default function Contact() {
           {/* Email */}
           <div>
             <label className="text-sm font-medium text-gray-700">Email *</label>
-            <span className="italic text-sm text-red-500 px-2">{errors.email}</span>
+            <span className="italic text-sm text-red-500 px-2">
+              {errors.email}
+            </span>
             <div className="flex items-center border rounded-lg px-3 py-2 mt-3">
               <Mail size={18} className="text-green-600 mr-2" />
               <input
@@ -221,8 +225,12 @@ export default function Contact() {
 
           {/* Message */}
           <div>
-            <label className="text-sm font-medium text-gray-700">Message *</label>
-            <span className="italic text-sm text-red-500 px-2">{errors.message}</span>
+            <label className="text-sm font-medium text-gray-700">
+              Message *
+            </label>
+            <span className="italic text-sm text-red-500 px-2">
+              {errors.message}
+            </span>
             <div className="flex items-start border rounded-lg px-3 py-2 mt-3">
               <MessageSquare size={18} className="text-green-600 mr-2 mt-1" />
               <textarea

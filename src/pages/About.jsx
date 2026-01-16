@@ -132,17 +132,17 @@ export default function About() {
     <>
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
-        <div
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            loaded ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            backgroundImage: `url('${imageUrl}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src={imageUrl}
+            alt="Farm background"
+            className={`w-full h-full object-cover transition-all duration-[1500ms] ease-out
+      ${loaded ? "opacity-100" : "opacity-0"}
+      scale-[1.05] sm:scale-[1.1] md:scale-[1.15] lg:scale-[1.2] xl:scale-[1.25]
+    `}
+          />
+        </div>
+
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-8 text-white gap-8">
           <h1 className="text-4xl md:text-6xl font-black">
