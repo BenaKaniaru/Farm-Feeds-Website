@@ -1,5 +1,15 @@
 import { useEffect, useState, useRef } from "react";
-import { Shield, Scale, Users, CheckCircle, Clipboard } from "lucide-react";
+import {
+  Shield,
+  Scale,
+  Users,
+  CheckCircle,
+  Clipboard,
+  Award,
+  Heart,
+  TrendingUp,
+} from "lucide-react";
+
 
 function Counter({ target, duration = 2000, showPlus = false }) {
   const [count, setCount] = useState(0);
@@ -30,7 +40,7 @@ function Counter({ target, duration = 2000, showPlus = false }) {
   const formatted = count.toLocaleString();
 
   return (
-    <span className="text-4xl font-black flex items-center justify-center gap-1">
+    <span className="text-xl sm:text-3xl md:text-4xl font-black flex items-center justify-center gap-1">
       <span
         className={`transition-transform duration-500 ${
           animate ? "scale-110 opacity-100" : "scale-90 opacity-0"
@@ -39,7 +49,7 @@ function Counter({ target, duration = 2000, showPlus = false }) {
         {formatted}
       </span>
       {showPlusSign && (
-        <span className="text-4xl font-black text-green-700 animate-pulse">
+        <span className="text-xl sm:text-3xl md:text-4xl font-black text-green-700 animate-pulse">
           +
         </span>
       )}
@@ -107,7 +117,7 @@ export default function About() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     if (coreRef.current) observer.observe(coreRef.current);
     return () => observer.disconnect();
@@ -122,7 +132,7 @@ export default function About() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     if (counterRef.current) observer.observe(counterRef.current);
     return () => observer.disconnect();
@@ -131,56 +141,144 @@ export default function About() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <img
-            src={imageUrl}
-            alt="Farm background"
-            className={`w-full h-full object-cover transition-all duration-[1500ms] ease-out
-      ${loaded ? "opacity-100" : "opacity-0"}
-      scale-[1.05] sm:scale-[1.1] md:scale-[1.15] lg:scale-[1.2] xl:scale-[1.25]
-    `}
-          />
-        </div>
+      {/* Hero Section */}
+      <section className="relative h-screen w-full overflow-hidden pb-32 md:pb-40">
+        {/* Fixed background image */}
+        <div
+          className={`absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-[1500ms]
+    ${loaded ? "opacity-100" : "opacity-0"}`}
+          style={{
+            backgroundImage: `url(${imageUrl})`,
+            backgroundAttachment: "fixed",
+          }}
+        />
 
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50" />
+
+        {/* Content */}
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-8 text-white gap-8">
           <h1 className="text-4xl md:text-6xl font-black">
             About Economy Farm Products
           </h1>
+
           <p className="text-xl md:text-2xl max-w-2xl mb-8 animate-fadeIn delay-150 px-12 text-white">
             Over two decades of experience in providing premium animal feeds and
             ensuring sustained customer delight
           </p>
         </div>
+
+        {/* Loading fallback */}
         {!loaded && (
           <div className="absolute inset-0 bg-gray-300 animate-pulse" />
         )}
       </section>
-      <section className="flex flex-col items-center text-left text-green-900 gap-2 py-16 md:px-20 lg:px-32 px-8 bg-yellow-50">
+
+      {/* ---------------- Counters Section ---------------- */}
+
+      <div
+        ref={counterRef}
+        className="absolute left-1/2 bottom-0 z-30 w-full max-w-6xl px-4 md:px-8
+             -translate-x-1/2 translate-y-[90%] sm:translate-y-[80%] md:translate-y-[75%]"
+      >
+        <div className="bg-white rounded-3xl shadow-2xl border border-green-100 overflow-hidden">
+          <div className="grid grid-cols-3 divide-x divide-green-100">
+            {/* Card 1 */}
+            <div
+              className="flex flex-col items-center justify-center gap-1 sm:gap-3
+                py-6 px-2 sm:py-12 sm:px-6
+                hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50
+                transition-all duration-500 group"
+            >
+              <Award
+                className="text-emerald-600 group-hover:scale-110 transition-transform duration-500 sm:size-[30]"
+                size={24}
+              />
+              {counterVisible && <Counter target={26} showPlus />}
+              <span className="font-semibold text-gray-700 text-center text-sm sm:text-lg">
+                Years of Excellence
+              </span>
+            </div>
+
+            {/* Card 2 */}
+            <div
+              className="flex flex-col items-center justify-center gap-1 sm:gap-3
+                py-6 px-2 sm:py-12 sm:px-6
+                hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50
+                transition-all duration-500 group"
+            >
+              <Heart
+                className="text-rose-500 group-hover:scale-110 transition-transform duration-500 sm:size-[30]"
+                size={24}
+              />
+              {counterVisible && <Counter target={1000} showPlus />}
+              <span className="font-semibold text-gray-700 text-center text-sm sm:text-lg">
+                Satisfied Farmers
+              </span>
+            </div>
+
+            {/* Card 3 */}
+            <div
+              className="flex flex-col items-center justify-center gap-1 sm:gap-3
+                py-6 px-2 sm:py-12 sm:px-6
+                hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50
+                transition-all duration-500 group"
+            >
+              <TrendingUp
+                className="text-green-600 group-hover:scale-110 transition-transform duration-500 sm:size-[30]"
+                size={24}
+              />
+              {counterVisible && <Counter target={20} showPlus />}
+              <span className="font-medium text-[10px] sm:text-base text-gray-700 text-center leading-tight">
+                Quality Feed Varieties
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section className="flex flex-col items-center text-left text-green-900 gap-2 pt-35 md:pt-50 pb-16 md:px-20 lg:px-32 px-8 bg-yellow-50">
         <div>
           <h2 className="text-3xl font-black italic mb-8 text-green-900 text-center">
             Our Story
           </h2>
           <div className="flex flex-col gap-2">
             <p>
-              Founded in 2003, Economy Farm Products has been at the forefront
-              of agricultural innovation, providing farmers with the highest
-              quality animal nutrition backed by scientific research and decades
-              of agricultural expertise.
+              Economy Farm Products (K) ltd is a limited liability company
+              incorporated on 1 August 1998.The company manufactures and
+              distributes animal feeds. The Company is owned and run by Kenyan
+              Directors assisted by a team of Competent Managers in Finance,
+              Animal Science and Accounting. The Firm is a member of the
+              Association of Kenya Feed Manufacturers (AKEFEMA), a nonprofit
+              organization that oversees internal quality compliance from
+              members and lobbies government agencies that address feed industry
+              challenges.
             </p>
 
             <p>
-              What started as a small operation has grown into a trusted partner
-              for thousands of farms across the region. Our commitment to
-              quality, sustainability, and innovation has never wavered.
+              At inception the company was situated at Kariobangi producing an
+              average of 100 metric tonnes in a month. Through prudent
+              management practices, the company realized phenomenal growth and
+              in November 1999, it had to relocate to Dakar road into a 5000 sq.
+              ft Warehouse. While at Dakar road, and before the advent of power
+              rationing in the year 2000, the company averaged 350 metric tonnes
+              in a month. We experienced continued growth and moved to a larger
+              go down along Nanyuki road measuring 9,000 sq. ft before
+              eventually relocating further to an 18,000 sq.ft Godown at the
+              same site.
             </p>
 
             <p>
-              Today, we combine traditional agricultural wisdom with
-              cutting-edge nutritional science to formulate feeds that optimize
-              animal health, improve farm productivity, and support sustainable
-              farming practices.
+              By 2011, the Company was producing 2,100 metric tonnes of animal
+              feeds per month and satisfying only 50% of its potential market.
+              Due to high warehouse rent and ingredient costs, the Company
+              relocated to Kyang’ombe opposite City Cabanas in 2014, producing
+              an average of 1,600 Metric Tonnes of Feed per month, all in Mash
+              Form. Due to increasing demand for our feeds in the market and
+              strategic decision to start making pelleted and crumb feeds, the
+              company constructed its own modern feed mill plant in Ndeiya,
+              Limuru. Currently, the company has the capacity to produce over
+              7000 metric tonnes of animal feed per month.
             </p>
           </div>
 
@@ -231,29 +329,6 @@ export default function About() {
           </div>
         </section>
       </section>
-
-      {/* Counters */}
-      <section
-        ref={counterRef}
-        className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center text-green-900 py-16 px-8"
-      >
-        <div className="flex flex-col items-center gap-4">
-          {counterVisible && <Counter target={20} showPlus={true} />}
-          <span className="font-normal">
-            Years of Experience and Excellence
-          </span>
-        </div>
-        <div className="flex flex-col items-center gap-4">
-          {counterVisible && <Counter target={1000} showPlus={true} />}
-          <span>Satisfied Farmers</span>
-        </div>
-        <div className="flex flex-col items-center gap-4">
-          {counterVisible && <Counter target={20} showPlus={true} />}
-          <span>Varieties of Quality Animal Feeds</span>
-        </div>
-      </section>
     </>
   );
 }
-
-
