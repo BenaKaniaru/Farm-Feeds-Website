@@ -176,11 +176,19 @@ export default function About() {
 
       {/* ---------------- Counters Section ---------------- */}
 
-      <div
-        ref={counterRef}
-        className="absolute left-1/2 bottom-0 z-30 w-full max-w-6xl px-4 md:px-8
-             -translate-y-[35%] sm:-translate-y-[45%] md:-translate-y-[55%] lg:-translate-y-[65%]"
-      >
+   <div
+  ref={counterRef}
+  className="
+    absolute left-1/2 bottom-0 z-30
+    w-full max-w-6xl px-4 md:px-8
+    -translate-x-1/2
+    -translate-y-[35%]
+    sm:-translate-y-[45%]
+    md:-translate-y-[55%]
+    lg:-translate-y-[65%]
+  "
+>
+
         <div className="bg-white rounded-3xl shadow-2xl border border-green-100 overflow-hidden">
           <div className="grid grid-cols-3 divide-x divide-green-100">
             {/* Card 1 */}
