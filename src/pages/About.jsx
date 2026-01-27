@@ -142,7 +142,7 @@ export default function About() {
     <>
       {/* Hero Section */}
       {/* Hero Section */}
-      <section className="relative h-[85vh] md:h-screen w-full overflow-hidden pb-32 md:pb-40">
+      <section className="relative h-[75vh] md:h-[85vh] lg:h-screen w-full overflow-hidden pb-32 md:pb-40">
         {/* Fixed background image */}
         <div
           className={`absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-[1500ms]
