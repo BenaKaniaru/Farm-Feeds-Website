@@ -141,65 +141,48 @@ export default function About() {
 
   return (
     <>
-      {/* Hero Section */}
-      {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden pb-32 md:pb-40">
-        {/* Fixed background image */}
-        <div
-          className={`absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-[1500ms]
-    ${loaded ? "opacity-100" : "opacity-0"}`}
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-            backgroundAttachment: "fixed",
-          }}
-        />
+      <div className="relative">
+        {/* Hero Section */}
+        <section className="relative h-[75vh] md:h-[85vh] w-full z-40">
+          {/* Background */}
+          <div
+            className={`absolute inset-0 bg-center bg-cover
+      ${loaded ? "opacity-100" : "opacity-0"} bg-fixed`}
+            style={{ backgroundImage: `url(${imageUrl})` }}
+          />
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-black/50" />
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-8 text-white gap-8">
-          <h1 className="text-4xl md:text-6xl font-black">
-            About Economy Farm Products
-          </h1>
+          <div className="relative z-10 flex flex-col text-center h-full px-4 md:px-8 text-white items-center text-center gap-4">
+            <h1 className="text-2xl md:text-4xl lg:text-6xl font-black pt-30 md:pt-20">
+              About Economy Farm Products
+            </h1>
 
-          <p className="text-xl md:text-2xl max-w-2xl mb-8 animate-fadeIn delay-150 px-12 text-white">
-            Over two decades of experience in providing premium animal feeds and
-            ensuring sustained customer delight
-          </p>
-        </div>
+            <p className="text-sm md:text-lg lg:text-2xl max-w-2xl px-6">
+              Over two decades of experience in providing premium animal feeds
+              and ensuring sustained customer delight
+            </p>
+          </div>
 
-        {/* Loading fallback */}
-        {!loaded && (
-          <div className="absolute inset-0 bg-gray-300 animate-pulse" />
-        )}
-      </section>
-
-      {/* ---------------- Counters Section ---------------- */}
-
-      <div
-        ref={counterRef}
-        className="absolute left-1/2 bottom-0 z-30 w-full max-w-6xl px-4 md:px-8
-             -translate-x-1/2 translate-y-[90%] sm:translate-y-[80%] md:translate-y-[75%]"
-      >
-        <div className="bg-white rounded-3xl shadow-2xl border border-green-100 overflow-hidden">
-          <div className="grid grid-cols-3 divide-x divide-green-100">
-            {/* Card 1 */}
-            <div
-              className="flex flex-col items-center justify-center gap-1 sm:gap-3
-                py-6 px-2 sm:py-12 sm:px-6
-                hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50
-                transition-all duration-500 group"
-            >
-              <Award
-                className="text-emerald-600 group-hover:scale-110 transition-transform duration-500 sm:size-[30]"
-                size={24}
-              />
-              {counterVisible && <Counter target={26} showPlus />}
-              <span className="font-semibold text-gray-700 text-center text-sm sm:text-lg">
-                Years of Excellence
-              </span>
-            </div>
+          <div
+            ref={counterRef}
+            className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-30 px-6 md:px-12"
+          >
+            <div className="grid grid-cols-3 text-center bg-white rounded-2xl shadow-lg">
+              {/* Card 1 */}
+              <div
+                className="flex flex-col items-center justify-center gap-1 sm:gap-3
+               py-4 px-1 sm:py-4 sm:px-4 md:py-4 md:px-6 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-500 group hover:rounded-2xl"
+              >
+                <Award
+                  className="text-emerald-600 group-hover:scale-110 transition-transform duration-500 sm:size-[30]"
+                  size={24}
+                />
+                {counterVisible && <Counter target={26} showPlus />}
+                <span className="font-medium text-[10px] sm:text-base text-gray-700 text-center leading-tight">
+                  Years of Excellence
+                </span>
+              </div>
 
               {/* Card 2 */}
               <div
@@ -216,25 +199,23 @@ export default function About() {
                 </span>
               </div>
 
-            {/* Card 3 */}
-            <div
-              className="flex flex-col items-center justify-center gap-1 sm:gap-3
-                py-6 px-2 sm:py-12 sm:px-6
-                hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50
-                transition-all duration-500 group"
-            >
-              <TrendingUp
-                className="text-green-600 group-hover:scale-110 transition-transform duration-500 sm:size-[30]"
-                size={24}
-              />
-              {counterVisible && <Counter target={20} showPlus />}
-              <span className="font-medium text-[10px] sm:text-base text-gray-700 text-center leading-tight">
-                Quality Feed Varieties
-              </span>
+              {/* Card 3 */}
+              <div
+                className="flex flex-col items-center justify-center gap-1 sm:gap-3
+               py-4 px-1 sm:py-4 sm:px-4 md:py-4 md:px-6 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-500 group hover:rounded-2xl"
+              >
+                <TrendingUp
+                  className="text-green-600 group-hover:scale-110 transition-transform duration-500 sm:size-[30]"
+                  size={24}
+                />
+                {counterVisible && <Counter target={20} showPlus />}
+                <span className="font-medium text-[10px] sm:text-base text-gray-700 text-center leading-tight">
+                  Quality Feed Varieties
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
         <section className="flex flex-col items-center text-left text-green-900 z-10 pt-26 md:pt-40 pb-16 md:px-20 lg:px-32 px-8 bg-yellow-50 ">
           <div>
@@ -336,6 +317,7 @@ export default function About() {
             </div>
           </section>
         </section>
+      </div>
     </>
   );
 }
