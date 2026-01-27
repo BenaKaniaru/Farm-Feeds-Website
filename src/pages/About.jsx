@@ -142,55 +142,45 @@ export default function About() {
     <>
       {/* Hero Section */}
       {/* Hero Section */}
-      <section className="relative h-[75vh] md:h-[85vh] lg:h-screen w-full overflow-hidden pb-32 md:pb-40">
-        {/* Fixed background image */}
-        <div
-          className={`absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-[1500ms]
-    ${loaded ? "opacity-100" : "opacity-0"}`}
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-            backgroundAttachment: "fixed",
-          }}
-        />
+      <div className="relative">
+  {/* Hero Section */}
+  <section className="relative h-[75vh] md:h-[85vh] lg:h-screen w-full overflow-hidden">
+    {/* Background */}
+    <div
+      className={`absolute inset-0 bg-center bg-cover bg-no-repeat transition-opacity duration-[1500ms]
+      ${loaded ? "opacity-100" : "opacity-0"} md:bg-fixed`}
+      style={{ backgroundImage: `url(${imageUrl})` }}
+    />
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/50" />
+    <div className="absolute inset-0 bg-black/50" />
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-8 text-white gap-8">
-          <h1 className="text-4xl md:text-6xl font-black">
-            About Economy Farm Products
-          </h1>
+    <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-8 text-white gap-8">
+      <h1 className="text-4xl md:text-6xl font-black">
+        About Economy Farm Products
+      </h1>
 
-          <p className="text-xl md:text-2xl max-w-2xl mb-8 animate-fadeIn delay-150 px-12 text-white">
-            Over two decades of experience in providing premium animal feeds and
-            ensuring sustained customer delight
-          </p>
-        </div>
+      <p className="text-xl md:text-2xl max-w-2xl px-6">
+        Over two decades of experience in providing premium animal feeds and
+        ensuring sustained customer delight
+      </p>
+    </div>
+  </section>
 
-        {/* Loading fallback */}
-        {!loaded && (
-          <div className="absolute inset-0 bg-gray-300 animate-pulse" />
-        )}
-      </section>
-
-      {/* ---------------- Counters Section ---------------- */}
-
-   <div
-  ref={counterRef}
-  className="
-    absolute left-1/2 bottom-0 z-30
-    w-full max-w-6xl px-4 md:px-8
-    -translate-x-1/2
-    -translate-y-[35%]
-    sm:-translate-y-[45%]
-    md:-translate-y-[55%]
-    lg:-translate-y-[65%]
-  "
->
-
-        <div className="bg-white rounded-3xl shadow-2xl border border-green-100 overflow-hidden">
-          <div className="grid grid-cols-3 divide-x divide-green-100">
+  {/* Counters */}
+  <div
+    ref={counterRef}
+    className="
+      absolute left-1/2 bottom-0 z-30
+      w-full max-w-6xl px-4 md:px-8
+      -translate-x-1/2
+      -translate-y-[35%]
+      sm:-translate-y-[45%]
+      md:-translate-y-[55%]
+      lg:-translate-y-[65%]
+    "
+  >
+    <div className="bg-white rounded-3xl shadow-2xl border border-green-100 overflow-hidden">
+      <div className="grid grid-cols-3 divide-x divide-green-100">
             {/* Card 1 */}
             <div
               className="flex flex-col items-center justify-center gap-1 sm:gap-3
@@ -244,6 +234,8 @@ export default function About() {
           </div>
         </div>
       </div>
+
+        <div className="h-40 sm:h-48 md:h-56 lg:h-64" />
 
       <section className="flex flex-col items-center text-left text-green-900 gap-2 pt-35 md:pt-50 pb-16 md:px-20 lg:px-32 px-8 bg-yellow-50">
         <div>
