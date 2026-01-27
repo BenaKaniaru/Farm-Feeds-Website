@@ -143,7 +143,7 @@ export default function About() {
     <>
       <div className="relative">
         {/* Hero Section */}
-        <section className="relative h-[75vh] md:h-[85vh] w-full z-40">
+        <section className="relative h-[60vh] md:h-[75vh] w-full z-40">
           {/* Background */}
           <div
             className={`absolute inset-0 bg-center bg-cover
