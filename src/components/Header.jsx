@@ -15,12 +15,12 @@ export default function Header() {
   return (
     <header className="w-full py-4 px-8 bg-white flex justify-between items-center shadow-md sticky top-0 z-50">
       {/* Logo */}
-      <Link to="/" className="text-2xl font-bold tracking-wide text-green-700">
+      <Link to="/" className="text-2xl font-cooper-custom font-bold tracking-wide text-green-700">
         FARM FEEDS
       </Link>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex gap-6 text-lg font-medium relative">
+      <nav className="hidden md:flex gap-6 text-lg font-medium relative font-cooper-custom tracking-wide text-green-700">
         <NavLink to="/" className={navClass}>
           Home
         </NavLink>

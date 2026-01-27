@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Cooper Black";
+  src: url("/fonts/CooperBlack.woff2") format("woff2"),
+       url("/fonts/CooperBlack.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @keyframes fadeIn {
@@ -13,4 +22,9 @@
 
 .animate-fadeIn {
   animation: fadeIn 1s ease-out forwards;
+}
+
+
+.font-cooper-custom{
+  font-family: "Cooper Black", serif !important;
 }

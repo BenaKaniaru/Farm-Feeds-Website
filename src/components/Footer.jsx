@@ -7,7 +7,9 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row mb-10 gap-10 justify-between">
         {/* Brand */}
         <div className="max-w-sm">
-          <h2 className="text-black font-bold text-xl mb-3">FARM FEEDS</h2>
+          <h2 className="text-2xl font-cooper-custom font-bold tracking-wide text-green-700">
+            FARM FEEDS
+          </h2>
           <p className="text-green-600 font-light leading-relaxed">
             Premium farm feeds and animal nutrition solutions for sustainable
             agriculture.
@@ -74,7 +76,7 @@ export default function Footer() {
                 <span key={product} className="hover:text-green-700 transition">
                   {product}
                 </span>
-              )
+              ),
             )}
           </div>
         </div>
