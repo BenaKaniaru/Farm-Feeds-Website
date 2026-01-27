@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row mb-10 gap-10 justify-between">
         {/* Brand */}
         <div className="max-w-sm">
-          <h2 className="text-2xl font-cooper-custom font-bold tracking-wide text-green-700">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-cooper-custom font-bold tracking-wide text-green-700">
             FARM FEEDS
           </h2>
           <p className="text-green-600 font-light leading-relaxed">
