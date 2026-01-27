@@ -155,7 +155,7 @@ export default function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          action="https://formsubmit.co/kaniarubenard623@gmail.com"
+          action="https://formsubmit.co/sales@farmfeeds.org"
           method="POST"
           className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg space-y-6"
         >
