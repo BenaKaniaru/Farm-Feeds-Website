@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <header className="w-full py-4 px-8 bg-white flex justify-between items-center shadow-md sticky top-0 z-50">
       {/* Logo */}
-      <Link to="/" className="text-2xl font-cooper-custom font-bold tracking-wide text-green-700">
+      <Link to="/" className="text-lg md:text-xl lg:text-2xl font-cooper-custom font-bold tracking-wide text-green-700">
         FARM FEEDS
       </Link>
 
