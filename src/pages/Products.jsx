@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Products() {
-  const imageUrl = "/images/feeds.jfif";
+  const imageUrl = "/images/feeds.webp";
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -13,26 +13,28 @@ export default function Products() {
 
   return (
     <div>
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <img
-            src={imageUrl}
-            alt="Farm background"
-            className={`w-full h-full object-cover transition-all duration-[1500ms] ease-out
-      ${loaded ? "opacity-100" : "opacity-0"}
-      scale-[1.05] sm:scale-[1.1] md:scale-[1.15] lg:scale-[1.2] xl:scale-[1.25]
-    `}
-          />
-        </div>
+      <section className="relative h-[60vh] md:h-[75vh] w-full overflow-hidden">
+        {/* Background */}
+        <div
+          className={`absolute inset-0 bg-center bg-cover bg-no-repeat bg-fixed transition-opacity duration-700 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        />
 
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black/50" />
+
+        {/* Content */}
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-8 text-white gap-8">
           <h1 className="text-4xl md:text-6xl font-black">Our Products</h1>
-          <p className="text-xl md:text-2xl max-w-2xl mb-8 animate-fadeIn delay-150 px-12 text-white">
+          <p className="text-lg md:text-xl mb-8 animate-fadeIn delay-150 px-12">
             Comprehensive range of high-quality feeds for healthier livestock
             and higher yields.
           </p>
         </div>
+
+        {/* Loading placeholder */}
         {!loaded && (
           <div className="absolute inset-0 bg-gray-300 animate-pulse" />
         )}
@@ -43,35 +45,39 @@ export default function Products() {
           Product Quality Guaranteed
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col text-green-700 gap-4 max-w-3xl mt-6 bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-lg font-bold">Premium Ingredients</h3>
-            <p>
+          <div className="flex flex-col text-green-700 gap-4 max-w-3xl mt-6 bg-white p-6 rounded-lg border border-green-500 shadow-xl">
+            <h3 className="text-lg font-bold text-black">
+              Premium Ingredients
+            </h3>
+            <p className="text-sm">
               We source only the finest grains, proteins, and vitamins to ensure
               optimal nutrition for higher yields and better animal health.{" "}
             </p>
           </div>
 
-          <div className="flex flex-col text-green-700 gap-4 max-w-3xl mt-6 bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-lg font-bold">Scientific Formulation</h3>
-            <p>
+          <div className="flex flex-col text-green-700 gap-4 max-w-3xl mt-6 bg-white p-6 rounded-lg border border-green-500 shadow-xl">
+            <h3 className="text-lg font-bold text-black">
+              Scientific Formulation
+            </h3>
+            <p className="text-sm">
               Each of our feed products is carefully formulated by our team of
               experienced animal nutritionists using the latest research and
               field testing.
             </p>
           </div>
 
-          <div className="flex flex-col text-green-700 gap-4 max-w-3xl mt-6 bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-lg font-bold">Quality Control</h3>
-            <p>
+          <div className="flex flex-col text-green-700 gap-4 max-w-3xl mt-6 bg-white p-6 rounded-lg shadow-lg border border-green-500 shadow-xl">
+            <h3 className="text-lg font-bold text-black">Quality Control</h3>
+            <p className="text-sm">
               Adherence to good production pactices and rigorous testing of our
               products at every stage of production ensures high quality and
               safety standards.
             </p>
           </div>
 
-          <div className="flex flex-col text-green-700 gap-4 max-w-3xl mt-6 bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-lg font-bold">Fresh</h3>
-            <p>
+          <div className="flex flex-col text-green-700 gap-4 max-w-3xl mt-6 bg-white p-6 rounded-lg border border-green-500 shadow-xl">
+            <h3 className="text-lg font-bold text-black">Fresh</h3>
+            <p className="text-sm">
               Products are produced fresh and delivered quickly to maintain peak
               nutritional value.
             </p>
@@ -84,7 +90,7 @@ export default function Products() {
           Are you ready to elevate your livestock yields?
         </h3>
 
-        <p>
+        <p className="text-sm md:text-[18px]">
           Our products are formulated to deliver exceptional results for your
           farm and we are ready to help you select the perfect products for you.
         </p>

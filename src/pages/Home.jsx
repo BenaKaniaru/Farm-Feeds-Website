@@ -120,10 +120,10 @@ export default function Home() {
 
       <section className="bg-yellow-50 py-16 px-8 text-center">
         <div className="mb-12">
-          <h2 className="text-black font-black text-4xl mb-8">
+          <h2 className="text-black font-black text-2xl md:text-4xl mb-8">
             Why Choose Us?
           </h2>
-          <p className="text-green-800 font-normal">
+          <p className="text-green-800 font-normal text-sm md:text-lg lg:text-xl px-16 md:px-24">
             We combine scientific expertise with natural ingredients to deliver
             exceptional nutrition that supports your livestock's health and
             productivity
@@ -133,47 +133,47 @@ export default function Home() {
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             <div className="flex items-center text-center flex-col gap-2 bg-white py-8 px-4 rounded-lg shadow-md ">
-              <span className="bg-gradient-to-r from-green-800 to-green-400 p-4 rounded-full">
-                <Sprout size={30} className="text-white" />
+              <span className="bg-gradient-to-r from-green-800 to-green-400 p-3 md:p-4 rounded-full">
+                <Sprout size={30} className="text-white sm:size-[20]" />
               </span>
 
               <span className="text-black font-bold">Premium Quality</span>
-              <p className="text-green-800 font-normal">
+              <p className="text-green-800 font-normal text-sm">
                 Scientifically formulated feeds using the finest natural
                 ingredients
               </p>
             </div>
 
             <div className="flex items-center text-center flex-col gap-2 bg-white py-8 px-4 rounded-lg shadow-md ">
-              <span className="bg-gradient-to-r from-green-800 to-green-400 p-4 rounded-full">
+              <span className="bg-gradient-to-r from-green-800 to-green-400 p-3 md:p-4 rounded-full">
                 <Award size={30} className="text-white" />
               </span>
 
               <span className="text-black font-bold">Proven results</span>
-              <p className="text-green-800 font-normal">
+              <p className="text-green-800 font-normal text-sm">
                 Over 20 years of excellence in animal nutrition and farm
                 productivity
               </p>
             </div>
 
             <div className="flex items-center text-center flex-col gap-2 bg-white py-8 px-4 rounded-lg shadow-md ">
-              <span className="bg-gradient-to-r from-green-800 to-green-400 p-4 rounded-full">
+              <span className="bg-gradient-to-r from-green-800 to-green-400 p-3 md:p-4 rounded-full">
                 <Shield size={30} className="text-white" />
               </span>
 
               <span className="text-black font-bold">Safety Certified</span>
-              <p className="text-green-800 font-normal">
+              <p className="text-green-800 font-normal text-sm">
                 All our products meet stringent safety and quality standards
               </p>
             </div>
 
             <div className="flex items-center text-center flex-col gap-2 bg-white py-8 px-4 rounded-lg shadow-md ">
-              <span className="bg-gradient-to-r from-green-800 to-green-400 p-4 rounded-full">
+              <span className="bg-gradient-to-r from-green-800 to-green-400 p-3 md:p-4 rounded-full">
                 <TrendingUp size={30} className="text-white" />
               </span>
 
               <span className="text-black font-bold">Better Growth</span>
-              <p className="text-green-800 font-normal">
+              <p className="text-green-800 font-normal text-sm">
                 Optimized nutrition for enhanced animal health and better yields
               </p>
             </div>
@@ -185,7 +185,7 @@ export default function Home() {
         <h2 className="text-black font-bold text-4xl">
           Trusted by Farmers NationWide
         </h2>
-        <p className="text-green-800 font-normal mt-4">
+        <p className="text-green-800 font-normal mt-4 text-sm md:text-lg lg:text-xl ">
           See what some of our customers say about their experience with our
           products
         </p>
@@ -194,7 +194,7 @@ export default function Home() {
           <div className="flex flex-col items-start text-left gap-4 mt-8 bg-white p-4 rounded-lg shadow-md">
             <Quote size={30} className="text-green-900" />
 
-            <span className="italic">
+            <span className="italic text-sm">
               "Since switching to Economy Farm Feeds, our milk production has
               increased by 15%. The quality of the feeds is unmatched and our
               cows are healthier than ever."
@@ -212,18 +212,20 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-start border-t mt-4 pt-4 w-full">
-              <span className="font-semibold text-lg">John Mwangi</span>
-              <span className="text-green-900 font-normal">
+              <span className="font-semibold text-sm">John Mwangi</span>
+              <span className="text-green-900 font-normal text-[14px]">
                 Mwangi Dairy Farm
               </span>
-              <span className="text-green-900 font-normal">Nakuru</span>
+              <span className="text-green-900 font-normal text-[12px]">
+                Nakuru
+              </span>
             </div>
           </div>
 
           <div className="flex flex-col items-start text-left gap-4 mt-8 bg-white p-4 rounded-lg shadow-md">
             <Quote size={30} className="text-green-900" />
 
-            <span className="italic">
+            <span className="italic text-sm">
               "The poultry feeds from Economy Farm Products have transformed our
               operation. Better egg quality, improved bird health, and
               outstanding customer service."
@@ -241,11 +243,13 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-start border-t mt-4 pt-4 w-full">
-              <span className="font-semibold text-lg">Eliud Tentuan</span>
-              <span className="text-green-900 font-normal">
+              <span className="font-semibold text-sm">Eliud Tentuan</span>
+              <span className="text-green-900 font-normal text-[14px]">
                 Eliud Poultry Ranch
               </span>
-              <span className="text-green-900 font-normal">Narok</span>
+              <span className="text-green-900 font-normal text-[12px] ">
+                Narok
+              </span>
             </div>
           </div>
 
@@ -253,7 +257,7 @@ export default function Home() {
             <div className="flex flex-col items-start text-left gap-4 mt-8 bg-white p-4 rounded-lg shadow-md">
               <Quote size={30} className="text-green-900" />
 
-              <span className="italic">
+              <span className="italic text-sm ">
                 "The feeds deliver consistent results. Our animals are thriving,
                 growing faster and healthier. Highly recommend to any serious
                 farmer."
@@ -271,11 +275,13 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col items-start border-t mt-4 pt-4 w-full">
-                <span className="font-semibold text-lg">Michael Kamune</span>
-                <span className="text-green-900 font-normal">
+                <span className="font-semibold text-md">Michael Kamune</span>
+                <span className="text-green-900 font-normal text-[14px]">
                   Mt. Kenya Dairy Land
                 </span>
-                <span className="text-green-900 font-normal">Meru</span>
+                <span className="text-green-900 font-normal text-[12px]">
+                  Meru
+                </span>
               </div>
             </div>
           </div>
@@ -284,7 +290,7 @@ export default function Home() {
 
       <section className="flex flex-col items-center text-center gap-6 py-16 px-8 bg-gradient-to-r from-green-800 to-green-400 text-white">
         <h2 className="text-3xl font-black">Ready to increase your yields?</h2>
-        <p>
+        <p className="text-sm md:text-lg">
           Join hundreds of satisfied farmers who trust Economy Farm Feeds for
           superior animal nutrition and experience the difference.
         </p>

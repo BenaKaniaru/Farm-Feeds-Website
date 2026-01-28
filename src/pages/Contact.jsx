@@ -10,7 +10,8 @@ import {
 
 
 export default function Contact() {
-  const imageUrl = "/images/farm feeds ariel.webp";
+  const imageUrl = "/images/farm-feeds-ariel.webp";
+
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -74,22 +75,21 @@ export default function Contact() {
 
   return (
     <div>
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-[60vh] md:h-[75vh] w-full overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <img
-            src={imageUrl}
-            alt="Farm background"
-            className={`w-full h-full object-cover transition-all duration-[1500ms] ease-out
-      ${loaded ? "opacity-100" : "opacity-0"}
-      scale-[1.05] sm:scale-[1.1] md:scale-[1.15] lg:scale-[1.2] xl:scale-[1.25]
-    `}
+          {/* Background */}
+          <div
+            className={`absolute inset-0 bg-center bg-cover bg-no-repeat bg-fixed transition-opacity duration-700 ${
+              loaded ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url(${imageUrl})` }}
           />
         </div>
 
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-8 text-white gap-8">
           <h1 className="text-4xl md:text-6xl font-black">Get In Touch</h1>
-          <p className="text-xl md:text-2xl max-w-2xl mb-8 animate-fadeIn delay-150 px-12 text-white">
+          <p className="text-lg md:text-xl mb-8 animate-fadeIn delay-150 px-12 text-white">
             Have questions or want to learn more about our products? Reach out
             to us! We are here to serve you.
           </p>
@@ -106,11 +106,11 @@ export default function Contact() {
           rel="noopener noreferrer"
           className="flex flex-col gap-2 text-center items-center p-6 bg-white rounded-lg shadow-md hover:cursor-pointer"
         >
-          <div className="bg-gradient-to-r from-green-600 to-green-300 text-white p-4 rounded-full">
+          <div className="bg-gradient-to-r from-green-600 to-green-300 text-white p-3 md:p-4 rounded-full">
             <MapPin className="text-white" size={30} />
           </div>
           <span className="text-xl font-bold">Visit Us</span>
-          <span>
+          <span className="text-sm md:text-[16px">
             Thigio-Ndeiya, along Ng'amba Kanyayo Road Off Gikambura Mutarakwa
             Road – Limuru
           </span>
@@ -120,31 +120,31 @@ export default function Contact() {
           href="tel:+254722209838"
           className="flex flex-col gap-2 text-center items-center p-6 bg-white rounded-lg shadow-md hover:cursor-pointer"
         >
-          <div className="bg-gradient-to-r from-green-600 to-green-300 text-white p-4 rounded-full">
+          <div className="bg-gradient-to-r from-green-600 to-green-300 text-white p-3 md:p-4  rounded-full">
             <Phone size={30} />
           </div>
           <span className="text-xl font-bold">Call Us</span>
-          <span>0722 209 838</span>
+          <span className="text-sm md:text-[16px]">0722 209 838</span>
         </a>
 
         <a
           href="mailto:sales@farmfeeds.org"
           className="flex flex-col gap-2 text-center items-center p-6 bg-white rounded-lg shadow-md"
         >
-          <div className="bg-gradient-to-r from-green-600 to-green-300 text-white p-4 rounded-full">
+          <div className="bg-gradient-to-r from-green-600 to-green-300 text-white p-3 md:p-4  rounded-full">
             <Mail size={30} />
           </div>
           <span className="text-xl font-bold">Mail Us</span>
-          <span>sales@farmfeeds.org</span>
+          <span className="text-sm md:text-[16px]">sales@farmfeeds.org</span>
         </a>
 
         <div className="flex flex-col gap-2 text-center items-center p-6 bg-white rounded-lg shadow-md">
-          <div className="bg-gradient-to-r from-green-600 to-green-300 text-white p-4 rounded-full">
+          <div className="bg-gradient-to-r from-green-600 to-green-300 text-white p-3 md:p-4 rounded-full">
             <Clock size={30} />
           </div>
           <span className="text-xl font-bold">Business Hours</span>
-          <span>Mon-Fri: 8:00 AM - 6:00 PM</span>
-          <span>Sat:9:00 AM - 2:00 PM</span>
+          <span className="text-sm md:text-[16px]">Mon-Fri: 8:00 AM - 6:00 PM</span>
+          <span className="text-sm md:text-[16px]">Sat:9:00 AM - 2:00 PM</span>
         </div>
       </section>
 
