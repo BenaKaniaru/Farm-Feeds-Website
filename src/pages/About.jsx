@@ -10,6 +10,8 @@ import {
   Heart,
   TrendingUp,
 } from "lucide-react";
+import AboutGallery from "../components/AboutGallery";
+
 
 
 function Counter({ target, duration = 2000, showPlus = false }) {
@@ -283,6 +285,8 @@ export default function About() {
               </div>
             </div>
           </div>
+
+          <AboutGallery />
 
           {/* Core Values Section */}
 
