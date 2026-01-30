@@ -65,10 +65,7 @@ export default function AboutGallery() {
 
   return (
     <>
-      <section
-        ref={sectionRef}
-        className="py-24 px-4 "
-      >
+      <section ref={sectionRef} className="py-24 px-4 ">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full font-semibold text-sm mb-6">
@@ -103,8 +100,13 @@ export default function AboutGallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
               <div className="absolute bottom-0 p-6 text-white">
-                <h3 className="text-2xl font-bold">{img.title}</h3>
-                <p className="text-sm opacity-90">{img.description}</p>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold leading-snug">
+                  {img.title}
+                </h3>
+
+                <p className="text-xs sm:text-sm md:text-sm opacity-90 leading-relaxed">
+                  {img.description}
+                </p>
               </div>
 
               <div className="absolute top-4 right-4 bg-white/20 p-3 rounded-full opacity-0 group-hover:opacity-100">
