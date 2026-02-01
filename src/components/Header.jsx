@@ -45,11 +45,27 @@ export default function Header() {
 
       {/* Hamburger */}
       <button
-        className="md:hidden text-3xl text-green-700 transition-transform duration-200 hover:scale-110"
         onClick={() => setOpen(!open)}
         aria-label="Toggle menu"
+        className="md:hidden relative w-8 h-8 flex items-center justify-center"
       >
-        ☰
+        {/* Top line */}
+        <span
+          className={`absolute h-0.5 w-6 bg-green-700 transition-all duration-300 ease-in-out
+    ${open ? "rotate-45 top-4" : "top-2"}`}
+        />
+
+        {/* Middle line */}
+        <span
+          className={`absolute h-0.5 w-6 bg-green-700 transition-all duration-300 ease-in-out
+    ${open ? "opacity-0" : "top-4"}`}
+        />
+
+        {/* Bottom line */}
+        <span
+          className={`absolute h-0.5 w-6 bg-green-700 transition-all duration-300 ease-in-out
+    ${open ? "-rotate-45 top-4" : "top-6"}`}
+        />
       </button>
 
       {/* Mobile Menu */}
