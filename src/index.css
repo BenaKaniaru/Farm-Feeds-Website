@@ -7,6 +7,16 @@
   font-display: swap;
 }
 
+
+.playfair-font {
+  font-family: "Playfair", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 @import "tailwindcss";
 
 @keyframes fadeIn {
@@ -27,4 +37,8 @@
 
 .font-cooper-custom{
   font-family: "Cooper Black", serif !important;
+}
+
+body {
+  font-family: "Playfair Display", serif;
 }

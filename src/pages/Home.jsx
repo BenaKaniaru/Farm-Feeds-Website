@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div>
       {/*Hero section or the landing page*/}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-screen overflow-hidden px-10 md:px-20 lg:px-32">
         {/* Fixed current background */}
         <div
           className="fixed inset-0 -z-20"
@@ -75,7 +75,7 @@ export default function Home() {
 
         {/* Parallax dark overlay */}
         <div
-          className="absolute inset-0 bg-black/50"
+          className="absolute inset-0 bg-black/60"
           style={{
             transform: `translateY(${scrollY * 0.25}px)`,
           }}
@@ -89,14 +89,18 @@ export default function Home() {
             transition: "transform 0.1s linear",
           }}
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-xl">
-            Nourishing Farms,
+          <h1 className="text-2xl md:text-4xl mb-8 leading-tight drop-shadow-xl">
+            High animal yields are not Powered <br /> by Magic.
             <br />
-            Growing Futures
+            <span className="font-bold text-3xl md:text-5xl">
+              They are powered by quality feeds.
+            </span>
           </h1>
 
-          <p className="text-lg md:text-2xl max-w-2xl mb-8 opacity-90 animate-fadeIn delay-150 px-12 drop-shadow-lg">
-            Premium quality feeds for healthier high yielding livestock and
+          <p className=" text-[14px] md:text-[20px] max-w-2xl mb-8 opacity-90 animate-fadeIn delay-150 px-8 drop-shadow-lg">
+            With over two decades of experience in animal nutrition, at{" "}
+            <span className="font-black">Economy Farm Products</span> we are committed to producing
+            premium quality feeds for healthier high yielding livestock and
             sustainable agriculture
           </p>
 
@@ -118,7 +122,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-yellow-50 py-16 px-8 text-center">
+      <section className="bg-yellow-50 py-10 px-10 md:px-20 lg:px-32 text-center">
         <div className="mb-12">
           <h2 className="text-black font-black text-2xl md:text-4xl mb-8">
             Why Choose Us?
@@ -181,7 +185,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-orange-100 text-center py-16 px-8 ">
+      <section className="bg-orange-100 text-center py-10 pb-20 px-10 md:px-20 lg:px-32 ">
         <h2 className="text-black font-bold text-4xl">
           Trusted by Farmers NationWide
         </h2>
@@ -288,7 +292,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center text-center gap-6 py-16 px-8 bg-gradient-to-r from-green-800 to-green-400 text-white">
+      <section className="flex flex-col items-center text-center gap-6 py-10 px-10 md:px-20 lg:px-32 bg-gradient-to-r from-green-800 to-green-400 text-white">
         <h2 className="text-3xl font-black">Ready to increase your yields?</h2>
         <p className="text-sm md:text-lg">
           Join hundreds of satisfied farmers who trust Economy Farm Feeds for
