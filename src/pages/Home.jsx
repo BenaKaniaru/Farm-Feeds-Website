@@ -89,27 +89,27 @@ export default function Home() {
             transition: "transform 0.1s linear",
           }}
         >
-          <h1 className="text-2xl md:text-4xl mb-8 leading-tight drop-shadow-xl">
-            High animal yields are not Powered <br /> by Magic.
+          <h1 className="text-xl md:text-3xl mb-8 leading-tight drop-shadow-xl">
+            Welcome to Economy Farm Products (K) Ltd,
             <br />
-            <span className="font-bold text-3xl md:text-5xl">
-              They are powered by quality feeds.
+            <span className="font-bold text-2xl md:text-4xl">
+              Your trusted partner in quality animal feeds.
             </span>
           </h1>
 
           <p className=" text-[14px] md:text-[20px] max-w-2xl mb-8 opacity-90 animate-fadeIn delay-150 px-8 drop-shadow-lg">
             With over two decades of experience in animal nutrition, at{" "}
-            <span className="font-black">Economy Farm Products</span> we are committed to producing
-            premium quality feeds for healthier high yielding livestock and
-            sustainable agriculture
+            <span className="font-black">Economy Farm Products</span> we are
+            committed to producing premium quality feeds for healthier high
+            yielding livestock and sustainable agriculture
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-row gap-4">
             <Link
               to="/products"
               className="bg-green-600 hover:bg-green-700 px-7 py-3 rounded-lg text-white font-semibold transition shadow-lg hover:scale-105"
             >
-              View Products
+              View Our Products
             </Link>
 
             <Link
@@ -117,6 +117,90 @@ export default function Home() {
               className="border border-white px-7 py-3 rounded-lg hover:bg-white hover:text-black transition shadow-lg hover:scale-105"
             >
               Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Selling Feeds + CTA */}
+      <section className="bg-green-50 py-14 px-10 md:px-20 lg:px-32">
+        {/* Section header */}
+        <div className="text-center mb-12">
+          <h2 className="text-black font-black text-2xl md:text-4xl mb-4">
+            Our Top-Selling Feeds
+          </h2>
+          <p className="text-green-800 text-sm md:text-lg max-w-3xl mx-auto">
+            Trusted by farmers across Kenya for quality nutrition, consistent
+            results, and improved farm productivity.
+          </p>
+        </div>
+
+        {/* Feed cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+          {[
+            {
+              title: "Layers Mash & Pellets",
+              desc: "High-nutrition feeds formulated to improve egg production, shell strength, and flock health.",
+            },
+            {
+              title: "Broiler Starter & Finisher Meals",
+              desc: "High-performance feeds for rapid growth, excellent feed conversion, and strong birds.",
+            },
+            {
+              title: "Chick & Grower Feeds",
+              desc: "Scientifically balanced for strong early growth, immunity, and smooth transition to maturity.",
+            },
+            {
+              title: "Kienyeji Mash & Pellets",
+              desc: "Designed for indigenous poultry to improve hardiness, growth, and egg yield.",
+            },
+            {
+              title: "Dairy Feeds",
+              desc: "Energy-rich dairy feeds designed to boost milk yield while maintaining animal health.",
+            },
+            {
+              title: "Pig Feeds",
+              desc: "Optimized formulations for fast growth, efficient feed utilization, and weight gain.",
+            },
+            {
+              title: "Skipa Dog Meal",
+              desc: "Balanced nutrition for healthy, active dogs",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
+            >
+              <h3 className="font-bold text-black mb-2">{item.title}</h3>
+              <p className="text-green-800 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA with image */}
+        <div className="relative rounded-xl overflow-hidden shadow-lg">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/farmlayers.jpg')" }}
+          />
+          <div className="absolute inset-0 bg-black/60" />
+
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-12 text-white">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-black mb-2">
+                Feed Your Farm for Better Results
+              </h3>
+              <p className="text-sm md:text-lg opacity-90 max-w-xl">
+                Explore our full range of high-performance feeds designed to
+                improve yields, animal health, and farm profitability.
+              </p>
+            </div>
+
+            <Link
+              to="/products"
+              className="bg-lime-500 hover:bg-lime-400 text-black font-bold px-6 py-3 rounded-lg transition hover:scale-105"
+            >
+              View All Products
             </Link>
           </div>
         </div>
