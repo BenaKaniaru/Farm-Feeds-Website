@@ -1,8 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Sprout, Award, Shield, TrendingUp, Quote, Star } from "lucide-react";
+import {
+  Sprout,
+  Award,
+  Shield,
+  TrendingUp,
+  Quote,
+  Star,
+  ChevronRight,
+  ChevronLeft,
+} from "lucide-react";
 
-const images = [
+/* -----------------------------
+   Static Data
+------------------------------ */
+const HERO_IMAGES = [
   "/images/farmcows.jpg",
   "/images/farmdairy.jpg",
   "/images/farmpigs.jpg",
@@ -11,197 +23,222 @@ const images = [
   "/images/farmlayers.jpg",
 ];
 
+const FEEDS = [
+  {
+    title: "Dairy Feeds",
+    desc: "Energy-rich dairy feeds designed to boost milk yield while maintaining animal health.",
+    image: "/images/Dairy Meal.jpg",
+    features: ["Higher milk production", "Improved health", "High vitality"],
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    title: "Layers Mash & Pellets",
+    desc: "High-nutrition feeds formulated to improve egg production, shell strength, and flock health.",
+    image: "/images/layersmash.jpg",
+    features: ["Higher egg output", "Stronger shells", "Better immunity"],
+    color: "from-orange-500 to-amber-500",
+  },
+
+  {
+    title: "Kienyeji Mash & Pellets",
+    desc: "Designed for indigenous poultry to improve hardiness, growth, and egg yield.",
+    image: "/images/Kienyeji.jpg",
+    features: [
+      "Improved egg laying and hatchability",
+      "Well-balanced nutrition",
+    ],
+  },
+
+  {
+    title: "Broiler Starter & Finisher Meals",
+    desc: "High-performance feeds for rapid growth and high yield of quality meat.",
+    image: "/images/broilers.jpg",
+    features: ["Rapid growth", "Improved meat quality", "Low visceral fat"],
+    color: "from-red-500 to-pink-500",
+  },
+  {
+    title: "Chick & Grower Feeds",
+    desc: "Scientifically balanced for strong early growth, immunity, and smooth transition to maturity.",
+    image: "/images/chicks.jpg",
+    features: ["Strong foundation", "Smooth maturity", "High vitality"],
+    color: "from-blue-500 to-cyan-500",
+  },
+
+  {
+    title: "Pig Feeds",
+    desc: "Optimized formulations for fast growth, efficient feed utilization, and weight gain.",
+    image: "/images/pigs.jpg",
+    features: ["Strong foundation", "Smooth maturity", "High vitality"],
+  },
+  {
+    title: "Skipa Dog Meal",
+    desc: "Balanced nutrition for healthy, active dogs",
+    image: "/images/Puppies.jpg",
+    features: [
+      "Aflatoxin free",
+      "Supports development of strong bones and teeth",
+      "Contains high quality toxin binders",
+    ],
+  },
+];
+
+/* -----------------------------
+   Helpers
+------------------------------ */
+const preloadImage = (src) => {
+  const img = new Image();
+  img.src = src;
+};
+
+/* -----------------------------
+   Component
+------------------------------ */
 export default function Home() {
   const [current, setCurrent] = useState(0);
   const [next, setNext] = useState(1);
-  const [showNext, setShowNext] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [animating, setAnimating] = useState(false);
+  const isMobile = window.innerWidth < 768;
 
-  const preload = (src) =>
-    new Promise((resolve) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = resolve;
-    });
-
+  /* Hero slideshow */
   useEffect(() => {
-    const interval = setInterval(async () => {
-      const upcoming = (current + 1) % images.length;
-      await preload(images[upcoming]);
+    const timer = setInterval(() => {
+      if (animating) return;
 
+      const upcoming = (current + 1) % HERO_IMAGES.length;
+      preloadImage(HERO_IMAGES[upcoming]);
+
+      setAnimating(true);
       setNext(upcoming);
-      setShowNext(true);
 
-      setTimeout(() => {
-        setCurrent(upcoming);
-        setShowNext(false);
-      }, 1500);
-    }, 8000);
+      setTimeout(
+        () => {
+          setCurrent(upcoming);
+          setAnimating(false);
+        },
+        isMobile ? 1200 : 2500,
+      );
+    }, 9000);
 
-    return () => clearInterval(interval);
-  }, [current]);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => clearInterval(timer);
+  }, [current, animating, isMobile]);
 
   return (
-    <div>
-      {/*Hero section or the landing page*/}
-      <section className="relative h-screen overflow-hidden px-10 md:px-20 lg:px-32">
-        {/* Fixed current background */}
+    <div className="font-sans text-gray-900">
+      {/* ---------------- HERO ---------------- */}
+      <section className="relative h-[100svh] overflow-hidden playfair-font">
         <div
-          className="fixed inset-0 -z-20"
-          style={{
-            backgroundImage: `url('${images[current]}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
+          style={{ backgroundImage: `url(${HERO_IMAGES[current]})` }}
         />
 
-        {/* Fixed next background (crossfade) */}
-        <div
-          className={`fixed inset-0 -z-20 transition-opacity duration-[1500ms] ease-in-out ${
-            showNext ? "opacity-100" : "opacity-0"
-          }`}
-          style={{
-            backgroundImage: `url('${images[next]}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+        <div className="absolute inset-0 bg-black/50" />
 
-        {/* Parallax dark overlay */}
-        <div
-          className="absolute inset-0 bg-black/60"
-          style={{
-            transform: `translateY(${scrollY * 0.25}px)`,
-          }}
-        />
+        <div className="relative z-10 flex h-full items-center justify-center px-4 text-center text-white">
+          <div className="max-w-4xl transform transition-all duration-1000 delay-300">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 leading-tight animate-fadeInUp">
+              Economy Farm Products (K) Ltd
+              <span className="block text-2xl md:text-3xl lg:text-4xl font-light mt-4 opacity-90">
+                Premium Animal Nutrition Solutions
+              </span>
+            </h1>
 
-        {/* Foreground content (faster parallax) */}
-        <div
-          className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 text-white"
-          style={{
-            transform: `translateY(${scrollY * 0.1}px)`,
-            transition: "transform 0.1s linear",
-          }}
-        >
-          <h1 className="text-xl md:text-3xl mb-8 leading-tight drop-shadow-xl">
-            Welcome to Economy Farm Products (K) Ltd,
-            <br />
-            <span className="font-bold text-2xl md:text-4xl">
-              Your trusted partner in quality animal feeds.
-            </span>
-          </h1>
+            <p className="text-lg md:text-xl lg:text-2xl opacity-90 mb-12 max-w-2xl mx-auto leading-relaxed animate-fadeInUp delay-500">
+              Two decades of excellence in scientifically formulated feeds for
+              optimal livestock health and productivity.
+            </p>
 
-          <p className=" text-[14px] md:text-[20px] max-w-2xl mb-8 opacity-90 animate-fadeIn delay-150 px-8 drop-shadow-lg">
-            With over two decades of experience in animal nutrition, at{" "}
-            <span className="font-black">Economy Farm Products</span> we are
-            committed to producing premium quality feeds for healthier high
-            yielding livestock and sustainable agriculture
-          </p>
+            <div className="flex flex-row gap-4 justify-center">
+              <Link
+                to="/products"
+                className="bg-green-600 hover:bg-green-700 px-7 py-3 rounded-lg text-white font-semibold transition shadow-lg hover:scale-105"
+              >
+                Explore Products
+              </Link>
 
-          <div className="flex flex-row gap-4">
-            <Link
-              to="/products"
-              className="bg-green-600 hover:bg-green-700 px-7 py-3 rounded-lg text-white font-semibold transition shadow-lg hover:scale-105"
-            >
-              View Our Products
-            </Link>
-
-            <Link
-              to="/contact"
-              className="border border-white px-7 py-3 rounded-lg hover:bg-white hover:text-black transition shadow-lg hover:scale-105"
-            >
-              Contact Us
-            </Link>
+              <Link
+                to="/contact"
+                className="border border-white px-7 py-3 rounded-lg hover:bg-white hover:text-black transition shadow-lg hover:scale-105"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Top Selling Feeds + CTA */}
-      <section className="bg-green-50 py-14 px-10 md:px-20 lg:px-32">
-        {/* Section header */}
-        <div className="text-center mb-12">
-          <h2 className="text-black font-black text-2xl md:text-4xl mb-4">
-            Our Top-Selling Feeds
+      {/* ---------------- TOP FEEDS ---------------- */}
+      <section className="bg-gray-50 py-16 px-4">
+        <div className="mx-auto max-w-6xl">
+          <h2
+            className="text-center text-green-600 font-black 
+            text-[clamp(1.8rem,5vw,2.8rem)] playfair-font"
+          >
+            Our Top of the Range Feeds
           </h2>
-          <p className="text-green-800 text-sm md:text-lg max-w-3xl mx-auto">
-            Trusted by farmers across Kenya for quality nutrition, consistent
-            results, and improved farm productivity.
-          </p>
-        </div>
 
-        {/* Feed cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
-          {[
-            {
-              title: "Layers Mash & Pellets",
-              desc: "High-nutrition feeds formulated to improve egg production, shell strength, and flock health.",
-            },
-            {
-              title: "Broiler Starter & Finisher Meals",
-              desc: "High-performance feeds for rapid growth, excellent feed conversion, and strong birds.",
-            },
-            {
-              title: "Chick & Grower Feeds",
-              desc: "Scientifically balanced for strong early growth, immunity, and smooth transition to maturity.",
-            },
-            {
-              title: "Kienyeji Mash & Pellets",
-              desc: "Designed for indigenous poultry to improve hardiness, growth, and egg yield.",
-            },
-            {
-              title: "Dairy Feeds",
-              desc: "Energy-rich dairy feeds designed to boost milk yield while maintaining animal health.",
-            },
-            {
-              title: "Pig Feeds",
-              desc: "Optimized formulations for fast growth, efficient feed utilization, and weight gain.",
-            },
-            {
-              title: "Skipa Dog Meal",
-              desc: "Balanced nutrition for healthy, active dogs",
-            },
-          ].map((item, i) => (
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {FEEDS.map((feed, i) => (
+              <div
+                key={i}
+                className="rounded-2xl bg-white shadow-md overflow-hidden"
+              >
+                <img
+                  src={feed.image}
+                  alt={feed.title}
+                  loading="lazy"
+                  className="h-48 w-full object-cover"
+                />
+
+                <div className="p-6">
+                  <h3 className="text-lg font-bold">{feed.title}</h3>
+                  <p className="mt-2 text-sm text-gray-600">{feed.desc}</p>
+
+                  <ul className="mt-4 space-y-2 text-sm">
+                    {feed.features.map((f, idx) => (
+                      <li key={idx} className="flex gap-2">
+                        <span className="text-green-600">•</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    to="/products"
+                    className="mt-6 inline-block text-sm font-semibold text-green-700"
+                  >
+                    View details →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA with image */}
+          <div className="relative rounded-xl overflow-hidden shadow-lg mt-8">
             <div
-              key={i}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
-            >
-              <h3 className="font-bold text-black mb-2">{item.title}</h3>
-              <p className="text-green-800 text-sm">{item.desc}</p>
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/farmlayers.jpg')" }}
+            />
+            <div className="absolute inset-0 bg-black/60" />
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-12 text-white">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-black mb-2">
+                  Feed Your Farm for Better Results
+                </h3>
+                <p className="text-sm md:text-lg opacity-90 max-w-xl">
+                  Explore our full range of high-performance feeds designed to
+                  improve yields, animal health, and farm profitability.
+                </p>
+              </div>
+
+              <Link
+                to="/products"
+                className="bg-lime-500 hover:bg-lime-400 text-black font-bold px-6 py-3 rounded-lg transition hover:scale-105"
+              >
+                View All Products
+              </Link>
             </div>
-          ))}
-        </div>
-
-        {/* CTA with image */}
-        <div className="relative rounded-xl overflow-hidden shadow-lg">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/farmlayers.jpg')" }}
-          />
-          <div className="absolute inset-0 bg-black/60" />
-
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-12 text-white">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-black mb-2">
-                Feed Your Farm for Better Results
-              </h3>
-              <p className="text-sm md:text-lg opacity-90 max-w-xl">
-                Explore our full range of high-performance feeds designed to
-                improve yields, animal health, and farm profitability.
-              </p>
-            </div>
-
-            <Link
-              to="/products"
-              className="bg-lime-500 hover:bg-lime-400 text-black font-bold px-6 py-3 rounded-lg transition hover:scale-105"
-            >
-              View All Products
-            </Link>
           </div>
         </div>
       </section>
@@ -376,18 +413,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center text-center gap-6 py-10 px-10 md:px-20 lg:px-32 bg-gradient-to-r from-green-800 to-green-400 text-white">
-        <h2 className="text-3xl font-black">Ready to increase your yields?</h2>
-        <p className="text-sm md:text-lg">
-          Join hundreds of satisfied farmers who trust Economy Farm Feeds for
-          superior animal nutrition and experience the difference.
+      {/* ---------------- CTA ---------------- */}
+      <section className="bg-gradient-to-r from-green-800 to-green-500 py-14 px-4 text-center text-white">
+        <h2 className="text-2xl font-bold">Ready to increase your yields?</h2>
+        <p className="mt-2 text-sm opacity-90">
+          Join thousands of farmers using Economy Farm Feeds.
         </p>
 
         <Link
           to="/contact"
-          className="bg-lime-500 text-white font-bold py-2 px-4 rounded-lg cursor-pointe hover:bg-lime-400"
+          className="mt-6 inline-block rounded-lg bg-lime-400 px-6 py-3 font-bold text-black hover:bg-lime-300"
         >
-          Get Started Today
+          Get Started
         </Link>
       </section>
     </div>

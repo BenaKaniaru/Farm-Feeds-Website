@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 pb-20 px-10 md:px-20 lg:px-32 pt-10 text-sm">
+    <footer className="bg-gray-50 px-4 md:px-8 pt-10 text-sm">
       <div className="flex flex-col md:flex-row mb-10 gap-10 justify-between">
         {/* Brand */}
         <div className="max-w-sm">
