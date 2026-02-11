@@ -25,7 +25,7 @@ export default function Header() {
       </Link>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex gap-6 text-lg font-medium relative font-cooper-custom tracking-wide text-green-700">
+      <nav className="hidden md:flex gap-6 text-lg font-medium relative tracking-wide text-green-700">
         <NavLink to="/" className={navClass}>
           Home
         </NavLink>
