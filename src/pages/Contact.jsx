@@ -279,6 +279,57 @@ export default function Contact() {
             )}
           </button>
         </form>
+
+        <section className="py-16 px-4 md:px-20 bg-white">
+          <h3 className="text-2xl md:text-3xl font-black text-green-900 text-center mb-8">
+            Find Our Location
+          </h3>
+
+          <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border">
+            {/* Map Container */}
+            <div className="relative w-full h-[300px] md:h-[450px]">
+              {/* Google Map Embed */}
+              <iframe
+                title="Economy Farm Products Location"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d127644.50995085419!2d36.5323267!3d-1.2353766!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f13d153f18c67%3A0xd97d7dce3c5f9a7e!2sEconomy%20Farm%20Products%20(K)%20Ltd!5e0!3m2!1sen!2ske!4v1768489811613!5m2!1sen!2ske"
+                className="absolute top-0 left-0 w-full h-full border-0"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+
+              {/* Animated Pin Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="relative">
+                  <div className="w-5 h-5 bg-green-600 rounded-full animate-ping absolute"></div>
+                  <div className="w-5 h-5 bg-green-700 rounded-full relative border-2 border-white"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Card with Info & Button */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-6 bg-white">
+              <div className="text-center md:text-left">
+                <p className="font-bold text-green-900 text-lg">
+                  Economy Farm Products
+                </p>
+                <p className="text-gray-600 text-sm">
+                  Thigio-Ndeiya, Limuru, Kenya
+                </p>
+              </div>
+
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Economy+Farm+Products+K+Ltd+Thigio-Ndeiya+Limuru+Kenya"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition"
+              >
+                🧭 Get Directions
+              </a>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
   );

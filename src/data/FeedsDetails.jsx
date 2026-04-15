@@ -1,81 +1,121 @@
-const FEEDS = [
+export const FEEDS = [
   {
     id: "dairy-feeds-standard",
     title: "Standard Dairy Meal",
     category: "Farm Feeds – Dairy Concentrates",
-    desc: "Farm Feeds Standard Dairy Meal is formulated for dairy cows producing 10–20 litres of milk per day.",
+    desc: "Standard Dairy Meal is a premium, balanced feed designed for dairy cows producing 10–20 litres of milk per day. Packed with essential proteins, energy, and minerals, it enhances milk yield, supports reproductive health, and keeps your herd strong even when forage quality is low.",
     image: "/images/farmcows.jpg",
-
     feedingInstructions:
       "Feed 1kg of Standard Dairy Meal for every 1.5 litres of milk produced when cows are on low-quality forage.",
-
-    nutrition: {
-      metabolizableEnergy: "2450 KCal/Kg",
-      crudeProtein: "15% minimum",
-      crudeFibre: "12% maximum",
-      fat: "6% maximum",
-      calcium: "0.9%",
-      phosphorus: "0.6%",
-    },
   },
 
   {
-    id: "Beta Farm Yield Dairy Meal",
+    id: "beta-farm-yield-dairy-meal",
     title: "Beta Farm Yield Dairy Meal",
     category: "Farm Feeds – Dairy Concentrates",
-    desc: "Beta Farm Yield Dairy Meal is the most popular brand in the market for cows producing 20-25 litres of milk on average per day.",
+    desc: "Beta Farm Yield Dairy Meal is the market-leading choice for high-performing cows producing 20–25 litres of milk daily. Formulated to maximize milk production and maintain herd health, it ensures consistent nutrition, optimal digestion, and improved energy levels for peak farm productivity.",
     image: "/images/farmcows.jpg",
-
     feedingInstructions:
       "On average, feed 1kg of Beta Farm Yield Dairy Meal for every 2 litres of milk produced above 10 kgs per cow per day.",
-
-    nutrition: {
-      metabolizableEnergy: "2650 KCal/Kg",
-      crudeProtein: "16.5% minimum",
-      crudeFibre: "12% maximum",
-      fat: "6% maximum",
-      calcium: "1.0%",
-      phosphorus: "0.7%",
-    },
   },
 
   {
-    id: "Mega Plus Dairy Meal",
+    id: "mega-plus-dairy-meal",
     title: "Mega Plus Dairy Meal",
     category: "Farm Feeds – Dairy Concentrates",
-    desc: "This is the top of the range brand of the farm feeds dairy concentrates. Mega Plus Dairy Mealis a carefully formulated dairy feed to ensure the best production for top yielders producing over 25 litres of milk per day.",
+    desc: "Mega Plus Dairy Meal is our top-tier dairy feed, expertly formulated for elite cows producing over 25 litres of milk per day. This high-energy, high-protein feed boosts milk volume, improves feed efficiency, and supports strong bones and overall herd vitality for maximum farm returns.",
     image: "/images/farmcows.jpg",
-
     feedingInstructions:
       "As a feeding guideline, allow 1kg of Mega Plus Dairy Meal for every 2.1 litres of milk produced above 10 litres per cow per day.",
-
-    nutrition: {
-      metabolizableEnergy: "2750 KCal/Kg",
-      crudeProtein: "18% minimum",
-      crudeFibre: "12% maximum",
-      fat: "6% maximum",
-      calcium: "1.0%",
-      phosphorus: "0.7%",
-    },
   },
 
   {
-    id: "Calf Early Weaner Meal",
+    id: "calf-early-weaner-meal",
     title: "Calf Early Weaner Meal",
     category: "Farm Feeds – Dairy Concentrates",
-    desc: "Calf Early Weaner Meal is a well balanced palatable concentrate for calves that supplement milk without affecting the calf's growth after early weaning.",
+    desc: "Calf Early Weaner Meal is a carefully balanced and palatable feed designed to support healthy growth in young calves. By supplementing milk, it encourages early rumen development, maintains optimal weight gain, and ensures your calves thrive post-weaning.",
     image: "/images/farmcows.jpg",
-
     feedingInstructions:
-      "The concentrate is introduced in handfuls at the 3rd week and slowly increased so that by the time of weaning, the calf would be consuming about 2kg per day.",
+      "Introduce the concentrate in small handfuls at the 3rd week and gradually increase so that by weaning, the calf consumes about 2kg per day.",
+  },
 
-    nutrition: {
-      metabolizableEnergy: "2600 KCal/Kg",
-      crudeProtein: "17% minimum",
-      crudeFibre: "8% maximum",
-      fat: "10% maximum",
-      calcium: "0.6%",
-      phosphorus: "0.45%",
-    },
+  {
+    id: "broiler-starter-mash",
+    title: "Broiler Starter Mash",
+    category: "Farm Feeds – Poultry Starter",
+    desc: "Broiler Starter Mash is a nutrient-rich feed designed to kickstart your chicks’ growth. With high protein content and essential vitamins and minerals, it promotes strong bones, rapid weight gain, and healthy immunity during the critical first weeks of life.",
+    image: "/images/farmcows.jpg",
+    feedingInstructions:
+      "Feed chicks ad libitum from day 1 to 6 weeks. Adjust quantities to ensure feed is always available but not wasted.",
+  },
+
+  {
+    id: "broiler-finisher-mash",
+    title: "Broiler Finisher Mash",
+    category: "Farm Feeds Poultry Products",
+    desc: "Broiler Finisher Mash nutrient profile is well balanced to ensure high yield of quality meat with very low visceral fat",
+    image: "/images/farmcows.jpg",
+    feedingInstructions:
+      "Each broiler bird should consume 2.8 to 3.0 kg of farm feeds broiler finisher mash up to slaughter time. At slaughter point (6 weeks) the broilers should weigh on average 1.8kg each.",
+  },
+
+  {
+    id: "farm-gro-starter-mash",
+    title: "Farm Gro Starter Mash",
+    category: "Farm Feeds Poultry Products",
+    desc: "Farm Gro Starter Mash is a special feed for broiler farmers targeting the premium-priced urban spring chicken market. It is a product for those keen on efficiency in modern broiler production.",
+    image: "/images/farmcows.jpg",
+    feedingInstructions:
+      "The feed is fed to broilers aged between 0 to 3 weeks, with each bird consuming 0.9 to 1.0 kg feed over this period.",
+  },
+
+  {
+    id: "FGS Crumbs and FGF Pellets",
+    title: "Farm Gro Starter Crumbs and Farm Gro Finisher Pellets",
+    category: "Farm Feeds Poultry Products",
+    desc: "Farm Gro Starter Crumbs and Farm Gro Finisher Pellets are similar in specifications to Farm Gro Starter and Farm Gro Finisher Mash. However compared to the mash feeds are advantageous in that they result in minimal wastage during feeding due to uniform particle size achieved through our modern pelleting process. Also, they have higher digestibility due to the cooking process in the pellet conditioners and also the high temparatures of upto 80 degrees achieved during pelleting eliminate most harmful microbes giving your chicks better health and growth rate.",
+    image: "/images/farmcows.jpg",
+    feedingInstructions:
+      "In the case of farm gro starter crumbs, they are to be fed to chicks aged 0 to 21 days, with each chick consuming 0.9 to 1 kg over this period. By day 21, it is expected that well managed broiler chicks on our starter crumbs should weigh on average 940 to 950 grams liveweight. On the other hand, farm gro finisher pellets from day 21 to slaughter, that is around 33-34 days, with each broiler chick consuming 2.2 to 2.3 kgs of feed over this period. Expected slaughet weight on our pellets is 1.8 to 1.9 kg liveweight per bird.",
+  },
+
+  {
+    id: "Farm Feeds Chick Mash",
+    title: "Farm Feeds Chick Mash",
+    category: "Farm Feeds Poultry Products",
+    desc: "Farm Feeds Chick Mash is a high-quality feed designed to support the early growth and development of chicks. The feed is formulated with a balanced blend of energy, proteins, essential amino acids, minerals, and vitamins to ensure healthy growth and development of layer chicks. The feeds also contain coccidiostat to protect the chicks from coccidiosis, a common parasitic disease in poultry.",
+    image: "/images/farmcows.jpg",
+    feedingInstructions:
+      "Feed the chicks from day 1 to 8 weeks of age. Each chick should consume a total ofapproximately 2 kg of feed over the 8 week chick rearing period.",
+  },
+
+  {
+    id: "Farm Feeds Growers Mash",
+    title: "Farm Feeds Growers Mash",
+    category: "Farm Feeds Poultry Products",
+    desc: "Farm Feeds Growers Mash is well-balanced for energy proteins, vitamins, and minerals to ensure pullets attain a minimum of 1.5 kg live weight at point of lay, so as to quickly reach peak production and maintain high production for a long period. The feeds also contain coccidiostat for the prevention of coccidiosis in the growing pullets.",
+    image: "/images/farmcows.jpg",
+    feedingInstructions:
+      "Feed the growers/pullets from 9 weeks of age to point of lay (18 weeks on average). Each pullet should consume a total of 7 kg over this period.",
+  },
+
+  {
+    id: "Farm Feeds Layers Mash",
+    title: "Farm Feeds Layers Mash",
+    category: "Farm Feeds Poultry Products",
+    desc: "Farm Feeds Layers Mash is a complete feed for laying chicken, well balanced in energy, protein, vitamins, and minerals to ensure good health and high egg production of the layers.",
+    image: "/images/farmcows.jpg",
+    feedingInstructions:
+      "Feed each layer bird approximately 130 to 140 grams of farm feeds layers mash per day.",
+  },
+
+  {
+    id: "Farm Feeds Chick Mash",
+    title: "Farm Feeds Chick Mash",
+    category: "Farm Feeds Poultry Products",
+    desc: "Farm Feeds Chick Mash is a high-quality feed designed to support the early growth and development of chicks. The feed is formulated with a balanced blend of energy, proteins, essential amino acids, minerals, and vitamins to ensure healthy growth and development of layer chicks. The feeds also contain coccidiostat to protect the chicks from coccidiosis, a common parasitic disease in poultry.",
+    image: "/images/farmcows.jpg",
+    feedingInstructions:
+      "Feed the chicks from day 1 to 8 weeks of age. Each chick should consume a total ofapproximately 2 kg of feed over the 8 week chick rearing period.",
   },
 ];

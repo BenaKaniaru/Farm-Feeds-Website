@@ -17,6 +17,19 @@
     "wdth" 100;
 }
 
+@keyframes floatSlow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.paper-grain {
+  background-image:
+    radial-gradient(rgba(0,0,0,0.04) 1px, transparent 0);
+  background-size: 3px 3px;
+}
+
+
 @import "tailwindcss";
 
 @keyframes fadeIn {

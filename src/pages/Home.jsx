@@ -15,12 +15,12 @@ import {
    Static Data
 ------------------------------ */
 const HERO_IMAGES = [
-  "/images/farmcows.jpg",
-  "/images/farmdairy.jpg",
-  "/images/farmpigs.jpg",
-  "/images/farmdogs.jpg",
-  "/images/farmkienyeji.jpg",
-  "/images/farmlayers.jpg",
+  "/images/farmcows.webp",
+  "/images/farmdairy.webp",
+  "/images/farmpigs.webp",
+  "/images/farmdogs.webp",
+  "/images/farmkienyeji.webp",
+  "/images/farmlayers.webp",
 ];
 
 const FEEDS = [
@@ -42,7 +42,7 @@ const FEEDS = [
   {
     title: "Kienyeji Mash & Pellets",
     desc: "Designed for indigenous poultry to improve hardiness, growth, and egg yield.",
-    image: "/images/Kienyeji.jpg",
+    image: "/images/farmkienyeji.webp",
     features: [
       "Improved egg laying and hatchability",
       "Well-balanced nutrition",
@@ -52,14 +52,14 @@ const FEEDS = [
   {
     title: "Broiler Starter & Finisher Meals",
     desc: "High-performance feeds for rapid growth and high yield of quality meat.",
-    image: "/images/broilers.jpg",
+    image: "/images/broilers.webp",
     features: ["Rapid growth", "Improved meat quality", "Low visceral fat"],
     color: "from-red-500 to-pink-500",
   },
   {
     title: "Chick & Grower Feeds",
     desc: "Scientifically balanced for strong early growth, immunity, and smooth transition to maturity.",
-    image: "/images/chicks.jpg",
+    image: "/images/chicks.webp",
     features: ["Strong foundation", "Smooth maturity", "High vitality"],
     color: "from-blue-500 to-cyan-500",
   },
@@ -67,13 +67,13 @@ const FEEDS = [
   {
     title: "Pig Feeds",
     desc: "Optimized formulations for fast growth, efficient feed utilization, and weight gain.",
-    image: "/images/pigs.jpg",
+    image: "/images/farmpigs.webp",
     features: ["Strong foundation", "Smooth maturity", "High vitality"],
   },
   {
     title: "Skipa Dog Meal",
     desc: "Balanced nutrition for healthy, active dogs",
-    image: "/images/Puppies.jpg",
+    image: "/images/Puppies.webp",
     features: [
       "Aflatoxin free",
       "Supports development of strong bones and teeth",
@@ -137,7 +137,7 @@ export default function Home() {
           <div className="max-w-4xl transform transition-all duration-1000 delay-300">
             <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 leading-tight animate-fadeInUp">
               Economy Farm Products (K) Ltd
-              <span className="block text-2xl md:text-3xl lg:text-4xl font-light mt-4 opacity-90">
+              <span className="block text-2xl md:text-3xl lg:text-4xl font-bold mt-4 opacity-90 text-green-400">
                 Premium Animal Nutrition Solutions
               </span>
             </h1>
@@ -217,7 +217,7 @@ export default function Home() {
           <div className="relative rounded-xl overflow-hidden shadow-lg mt-8">
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/farmlayers.jpg')" }}
+              style={{ backgroundImage: "url('/images/farmlayers.webp')" }}
             />
             <div className="absolute inset-0 bg-black/60" />
 
