@@ -143,7 +143,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl lg:text-2xl opacity-90 mb-12 max-w-2xl mx-auto leading-relaxed animate-fadeInUp delay-500">
-              Two decades of excellence in scientifically formulated feeds for
+              Two decades of excellence in producing scientifically formulated feeds for
               optimal livestock health and productivity.
             </p>
 
