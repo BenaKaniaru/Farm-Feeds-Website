@@ -80,6 +80,16 @@ export const FEEDS = [
   },
 
   {
+    id: "Farm Feeds Chick Mash",
+    title: "Farm Feeds Chick Mash",
+    category: "Farm Feeds Poultry Products",
+    desc: "Farm feeds chick mash contains energy, proteins, vitamins, minerals, and essential amino acids to ensure the healthy growth and development of chicks. It als contains coccidiostat for the prevention of coccidiosis in chicks during this crucial period of their growth",
+    image: "/images/ChickMash.png",
+    feedingInstructions:
+      "Feed the chicks from day 1 to 8 weeks of age. Each chick should consume a total of 2 kg over the 8-week chick rearing period.",
+  },
+
+  {
     id: "Farm Feeds Growers Mash",
     title: "Farm Feeds Growers Mash",
     category: "Farm Feeds Poultry Products",
@@ -104,7 +114,7 @@ export const FEEDS = [
     title: "Farm Feeds Kienyeji Poultry Mash",
     category: "Farm Feeds Poultry Products",
     desc: "Farm Feeds Kienyeji Mash is designed specifically for local chicken and is properly balanced to meet nutritional requirements of local birds for improved productivity and growth. The feeds ingredients include maize, maize germ, wheat pollard and bran, soya meal, sun flower cake, vitamins, minerals, and toxin binders.",
-    image: "/images/farmcows.jpg",
+    image: "/images/KienyejiMash.png",
   },
 
   {
