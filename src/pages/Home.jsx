@@ -41,42 +41,36 @@ const FEEDS = [
     desc: "High-nutrition feeds formulated to improve egg production, shell strength, and flock health.",
     image: "/images/layersmash.jpg",
     features: ["Higher egg output", "Stronger shells", "Better immunity"],
-    badge: "Popular",
   },
   {
     title: "Kienyeji Mash & Pellets",
     desc: "Designed for indigenous poultry to improve hardiness, growth, and egg yield.",
     image: "/images/farmkienyeji.webp",
     features: ["Improved egg laying", "Well-balanced nutrition", "Hardiness"],
-    badge: "Traditional",
   },
   {
     title: "Broiler Starter & Finisher",
     desc: "High-performance feeds for rapid growth and high yield of quality meat.",
     image: "/images/broilers.webp",
     features: ["Rapid growth", "Improved meat quality", "Low visceral fat"],
-    badge: "Fast Growth",
   },
   {
     title: "Chick & Grower Feeds",
     desc: "Scientifically balanced for strong early growth, immunity, and smooth transition.",
     image: "/images/chicks.webp",
     features: ["Strong foundation", "Smooth maturity", "High vitality"],
-    badge: "Starter",
   },
   {
     title: "Pig Feeds",
     desc: "Optimized formulations for fast growth, efficient feed utilization, and weight gain.",
     image: "/images/farmpigs.webp",
     features: ["Fast weight gain", "Feed efficiency", "Health boost"],
-    badge: "Premium",
   },
   {
     title: "Skipa Dog Meal",
     desc: "Balanced nutrition for healthy, active dogs",
     image: "/images/Puppies.webp",
     features: ["Aflatoxin free", "Strong bones & teeth", "Quality binders"],
-    badge: "Pet Care",
   },
 ];
 

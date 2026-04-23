@@ -34,9 +34,17 @@ export const FEEDS = [
     title: "Calf Early Weaner Meal",
     category: "Farm Feeds Dairy Concentrates",
     desc: "Calf Early Weaner Meal is a carefully balanced and palatable feed designed to support healthy growth in young calves. By supplementing milk, it encourages early rumen development, maintains optimal weight gain, and ensures your calves thrive post-weaning.",
-    image: "/images/farmcows.jpg",
+    image: "/images/Calf Early Weaner Meal.jpg",
     feedingInstructions:
       "Introduce the concentrate in small handfuls at the 3rd week and gradually increase so that by weaning, the calf consumes about 2kg per day.",
+  },
+
+  {
+    id: "calf-early-weaner-pellets",
+    title: "Calf Early Weaner Pellets",
+    category: "Farm Feeds Dairy Concentrates",
+    desc: "Calf Early Weaner Pellets is a highly palatable concentrate for Dairy Calves in the first five months of life, introduced at 2 weeks of age. The pelleting process renters the feed more digestible to the young claves. Pellets are also easy to pick and chew, allowing early rumen development for the calves. Also, there is minimal wastage during feeding due to the pellet form.",
+    image: "/images/Calf Pellets.png",
   },
 
   {
