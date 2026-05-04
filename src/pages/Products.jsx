@@ -4,7 +4,7 @@ import { FEEDS } from "../data/FeedsDetails";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Products() {
-  const imageUrl = "/images/feeds.webp";
+  const imageUrl = "/images/productImage.png";
   const [loaded, setLoaded] = useState(false);
   const [selectedFeed, setSelectedFeed] = useState(null);
 
@@ -177,12 +177,19 @@ export default function Products() {
                   {/* Image with overlay gradient */}
                   <div className="relative overflow-hidden h-56">
                     <img
-                      src={feed.image}
+                      src={feed.image || "/images/placeholder-feed.jpg"} // fallback if null/undefined
                       alt={feed.title}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       onError={(e) => {
-                        e.target.src = "/images/placeholder-feed.jpg";
+                        const img = e.currentTarget;
+                        if (
+                          img.src !==
+                          window.location.origin +
+                            "/images/placeholder-feed.jpg"
+                        ) {
+                          img.src = "/images/placeholder-feed.jpg";
+                        }
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

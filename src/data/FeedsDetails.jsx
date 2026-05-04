@@ -52,7 +52,7 @@ export const FEEDS = [
     title: "Broiler Starter Mash",
     category: "Farm Feeds Poultry Products",
     desc: "Broiler Starter Mash is a nutrient-rich feed designed to kickstart your chicks’ growth. With high protein content and essential vitamins and minerals, it promotes strong bones, rapid weight gain, and healthy immunity during the critical first weeks of life.",
-    image: "/images/farmcows.jpg",
+    image: "/images/broilerStarter.png",
     feedingInstructions:
       "Feed chicks ad libitum from day 1 to 6 weeks. Adjust quantities to ensure feed is always available but not wasted.",
   },
@@ -62,7 +62,7 @@ export const FEEDS = [
     title: "Broiler Finisher Mash",
     category: "Farm Feeds Poultry Products",
     desc: "Broiler Finisher Mash nutrient profile is well balanced to ensure high yield of quality meat with very low visceral fat",
-    image: "/images/farmcows.jpg",
+    image: "/images/BroilerFinisher.png",
     feedingInstructions:
       "Each broiler bird should consume 2.8 to 3.0 kg of farm feeds broiler finisher mash up to slaughter time. At slaughter point (6 weeks) the broilers should weigh on average 1.8kg each.",
   },

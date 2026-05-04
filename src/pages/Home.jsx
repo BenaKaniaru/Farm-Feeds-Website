@@ -222,9 +222,9 @@ export default function Home() {
               >
                 <Link
                   to="/products"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 px-8 py-4 rounded-full text-white font-semibold transition shadow-xl hover:shadow-2xl"
+                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 px-6 md:px-8 py-2 md:py-4 text-sm rounded-full text-white font-semibold transition shadow-xl hover:shadow-2xl"
                 >
-                  Explore Products
+                  Explore Our Products
                   <ChevronRight className="w-5 h-5" />
                 </Link>
               </motion.div>
@@ -235,7 +235,7 @@ export default function Home() {
               >
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 border-2 border-white/80 hover:bg-white hover:text-green-900 px-8 py-4 rounded-full font-semibold transition backdrop-blur-sm"
+                  className="inline-flex items-center gap-2 border-2 border-white/80 hover:bg-white hover:text-green-900 px-6 md:px-8 py-2 md:py-4 text-sm  rounded-full font-semibold transition backdrop-blur-sm"
                 >
                   Contact Us
                 </Link>
@@ -395,8 +395,6 @@ export default function Home() {
               delay={0.3}
             />
           </div>
-
-          
         </div>
       </section>
 
