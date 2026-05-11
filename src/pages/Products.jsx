@@ -4,7 +4,7 @@ import { FEEDS } from "../data/FeedsDetails";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Products() {
-  const imageUrl = "/images/productImage.png";
+  const imageUrl = "/images/productImage.webp";
   const [loaded, setLoaded] = useState(false);
   const [selectedFeed, setSelectedFeed] = useState(null);
 

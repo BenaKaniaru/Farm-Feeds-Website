@@ -22,7 +22,7 @@ import {
 const HERO_IMAGES = [
   "/images/farmcows.webp",
   "/images/farmdairy.webp",
-  "/images/farmpigs.webp",
+  "/images/farmpigs1.webp",
   "/images/farmdogs.webp",
   "/images/farmkienyeji.webp",
   "/images/farmlayers.webp",
