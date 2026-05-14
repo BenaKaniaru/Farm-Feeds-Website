@@ -32,9 +32,9 @@ const FEEDS = [
   {
     title: "Dairy Feeds",
     desc: "Energy-rich dairy feeds designed to boost milk yield while maintaining animal health.",
-    image: "/images/Dairy Meal.jpg",
+    image: "/images/Dairy Meal.webp",
     features: ["Higher milk production", "Improved health", "High vitality"],
-    badge: "Best Seller",
+    
   },
   {
     title: "Layers Mash & Pellets",
